@@ -30,7 +30,7 @@ class circularDoubleLL(object):
             self.nodeCount+=1
         
         #when we want to add at last position
-        elif(location==self.nodeCount):
+        elif(location>=self.nodeCount):
             node1.set_prev(self.tail)
             self.tail.set_next(node1)
             self.head.set_prev(node1)
@@ -71,6 +71,9 @@ class circularDoubleLL(object):
 
     def test(self):
         tempNode=self.head
+        if(tempNode is None):
+            print("no linked list found to test")
+            return
         for i in range(0,50):
             print(tempNode.get_data(),end="\t")
             tempNode=tempNode.get_next()
@@ -78,6 +81,9 @@ class circularDoubleLL(object):
 
     def revTest(self):
         tempNode=self.tail
+        if(tempNode is None):
+            print("no linked list found to test")
+            return
         for i in range(0,50):
             print(tempNode.get_data(),end="\t")
             tempNode=tempNode.get_prev()
@@ -111,14 +117,15 @@ class circularDoubleLL(object):
 
         # we want to delete the first node in the list
         elif(location==0):
-            self.head.set_next(self.head.get_next.get_next())
+            print("hi")
+            self.head=(self.head.get_next())
             self.head.set_prev(self.tail)
             self.tail.set_next(self.head)
             self.nodeCount-=1
 
         # we want to delete the last node in the list
         elif(location==self.nodeCount):
-            slef.tail=self.tail.get_prev()
+            self.tail=self.tail.get_prev()
             self.tail.set_next(self.head)
             self.head.set_prev(self.tail)
             self.nodeCount-=1
@@ -139,7 +146,8 @@ class circularDoubleLL(object):
             tempNode.set_prev(None)
             tempNode=tempNode.get_next()
         self.head=None 
-        self.tail=None 
+        self.tail=None
+        self.nodeCount=0 
 
 
 
