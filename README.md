@@ -5,4 +5,5 @@ the included data structures are
 - stack
 - binary tree
 - binary search tree
+- binary heap
 
