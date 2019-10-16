@@ -27,7 +27,7 @@ class queue(object):
     def __init__(self):
         self.head=None 
         self.tail=None 
-        self.nodeCount=0
+        #self.nodeCount=0
 
     def enQueue(self,vertex):
         node1=node(vertex)

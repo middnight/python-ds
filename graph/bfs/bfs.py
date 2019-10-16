@@ -1,5 +1,5 @@
-from linkList import node
-from linkList import queue
+from queue import node
+from queue import queue
 class graph(object):
     def __init__(self,nodes=0):
         self.list1=[None for x in range(nodes)]
