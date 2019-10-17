@@ -22,7 +22,23 @@ class graph(object):
             if i==0:
                 return i
 
-    
+    def dfs1(self,startVertex):
+        if(self.list2[startVertex]==1):
+            return
+        else:
+            self.list2[startVertex]=1
+            
+            tempNode=self.vertexList[startVertex]
+            print(startVertex,end="\t")
+            while(tempNode is not None):
+                self.dfs(tempNode.get_data())
+                
+                tempNode=tempNode.get_next()
+
+
+
+
+    #this function uses the custom created stack to do traversal
     def dfs(self,startVertex):
         
         
@@ -44,3 +60,4 @@ class graph(object):
                     if(self.list2[neighbour]==0):
                         self.s1.push(neighbour)
                     tempNode=tempNode.get_next()
+
